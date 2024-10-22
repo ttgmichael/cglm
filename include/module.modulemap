@@ -1,7 +1,19 @@
 module cglm {
     header "cglm/cglm.h"
     header "cglm/struct.h"
-    
+    header "cglm/clipspace/ortho_lh_zo.h"
+    header "cglm/clipspace/persp_lh_zo.h"
+    header "cglm/clipspace/ortho_lh_no.h"
+    header "cglm/clipspace/persp_lh_no.h"
+    header "cglm/clipspace/ortho_rh_zo.h"
+    header "cglm/clipspace/persp_rh_zo.h"
+    header "cglm/clipspace/ortho_rh_no.h"
+    header "cglm/clipspace/persp_rh_no.h"
+    header "cglm/clipspace/view_lh_zo.h"
+    header "cglm/clipspace/view_lh_no.h"
+    header "cglm/clipspace/view_rh_zo.h"
+    header "cglm/clipspace/view_rh_no.h"
+
     export *
 }
 

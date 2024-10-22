@@ -4,7 +4,7 @@ import PackageDescription
 
 let cglmBuildSettings: [CSetting] = [
     .headerSearchPath("./include/cglm"),
-    .define("CGLM_CLIPSPACE_INCLUDE_ALL‎")
+    .define("CGLM_CLIPSPACE_INCLUDE_ALL")
     ]
 
 let package = Package(
@@ -28,7 +28,8 @@ let package = Package(
             sources: [
                 "./src",
             ],
-            publicHeadersPath: "./include"
+            publicHeadersPath: "./include",
+            cSettings: cglmBuildSettings
         ),
         .target(
             name: "cglmHeader",

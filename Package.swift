@@ -3,7 +3,6 @@
 import PackageDescription
 
 let cglmBuildSettings: [CSetting] = [
-    .headerSearchPath("./include/cglm"),
     .define("CGLM_CLIPSPACE_INCLUDE_ALL"),
     .define("CGLM_FORCE_DEPTH_ZERO_TO_ONE")
     ]
@@ -34,15 +33,16 @@ let package = Package(
         ),
         .target(
             name: "cglmHeader",
-            path: "./",
+            path: "./include/cglm",
             exclude: [
-                "./docs",
-                "./include",
-                "./test",
-                "./win",
+                "./call",
+                "./clipspace",
+                "./struct",
+                "./simd",
+                "./handed"
             ],
             sources: [
-                "./src/swift",
+                "../../src/swift",
             ],
             publicHeadersPath: "./include",
             cSettings: cglmBuildSettings

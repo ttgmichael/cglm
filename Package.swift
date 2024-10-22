@@ -2,6 +2,10 @@
 
 import PackageDescription
 
+let cglmBuildSettings: [CSetting] = [
+    .define("CGLM_CLIPSPACE_INCLUDE_ALL‎")
+    ]
+
 let package = Package(
     name: "cglm",
     products: [
@@ -37,7 +41,8 @@ let package = Package(
             sources: [
                 "./src/swift",
             ],
-            publicHeadersPath: "./include"
+            publicHeadersPath: "./include",
+            cSettings: cglmBuildSettings
         ),
     ],
     cLanguageStandard: .c11

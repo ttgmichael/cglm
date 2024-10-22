@@ -3,6 +3,7 @@
 import PackageDescription
 
 let cglmBuildSettings: [CSetting] = [
+    .headerSearchPath("./include/cglm"),
     .define("CGLM_CLIPSPACE_INCLUDE_ALL‎")
     ]
 

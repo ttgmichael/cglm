@@ -1,5 +1,5 @@
 project('cglm', 'c',
-    version : '0.9.5',
+    version : '0.9.6',
     license : 'mit',
     default_options : [
         'c_std=c11',
@@ -56,8 +56,10 @@ cglm_src = files(
     'src/mat4x2.c',
     'src/mat4x3.c',
     'src/plane.c',
+    'src/noise.c',
     'src/frustum.c',
     'src/box.c',
+    'src/aabb2d.c',
     'src/project.c',
     'src/sphere.c',
     'src/ease.c',

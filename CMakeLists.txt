@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 project(cglm
-  VERSION 0.9.5
+  VERSION 0.9.6
   HOMEPAGE_URL https://github.com/recp/cglm
   DESCRIPTION "OpenGL Mathematics (glm) for C"
   LANGUAGES C
@@ -93,8 +93,10 @@ add_library(${PROJECT_NAME}
   src/mat4x2.c
   src/mat4x3.c
   src/plane.c
+  src/noise.c
   src/frustum.c
   src/box.c
+  src/aabb2d.c
   src/project.c
   src/sphere.c
   src/ease.c

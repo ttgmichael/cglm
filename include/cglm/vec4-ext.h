@@ -52,7 +52,7 @@ glm_vec4_broadcast(float val, vec4 d) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(d, wasm_f32x4_splat(val));
 #elif defined( __SSE__ ) || defined( __SSE2__ )
-  glmm_store(d, _mm_set1_ps(val));
+  glmm_store(d, glmm_set1(val));
 #else
   d[0] = d[1] = d[2] = d[3] = val;
 #endif
@@ -70,7 +70,7 @@ glm_vec4_fill(vec4 v, float val) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(v, wasm_f32x4_splat(val));
 #elif defined( __SSE__ ) || defined( __SSE2__ )
-  glmm_store(v, _mm_set1_ps(val));
+  glmm_store(v, glmm_set1(val));
 #else
   v[0] = v[1] = v[2] = v[3] = val;
 #endif
@@ -300,11 +300,11 @@ glm_vec4_fract(vec4 v, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_floor(vec4 x, vec4 dest) {
-  dest[0] = floorf(x[0]);
-  dest[1] = floorf(x[1]);
-  dest[2] = floorf(x[2]);
-  dest[3] = floorf(x[3]);
+glm_vec4_floor(vec4 v, vec4 dest) {
+  dest[0] = floorf(v[0]);
+  dest[1] = floorf(v[1]);
+  dest[2] = floorf(v[2]);
+  dest[3] = floorf(v[3]);
 }
 
 /*!
@@ -316,11 +316,11 @@ glm_vec4_floor(vec4 x, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_mods(vec4 x, float y, vec4 dest) {
-  dest[0] = fmodf(x[0], y);
-  dest[1] = fmodf(x[1], y);
-  dest[2] = fmodf(x[2], y);
-  dest[3] = fmodf(x[3], y);
+glm_vec4_mods(vec4 v, float s, vec4 dest) {
+  dest[0] = fmodf(v[0], s);
+  dest[1] = fmodf(v[1], s);
+  dest[2] = fmodf(v[2], s);
+  dest[3] = fmodf(v[3], s);
 }
 
 /*!

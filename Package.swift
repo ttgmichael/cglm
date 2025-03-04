@@ -2,10 +2,18 @@
 
 import PackageDescription
 
-let cglmBuildSettings: [CSetting] = [
+var cglmBuildSettings: [CSetting] = [
     .headerSearchPath("./"),
     .define("CGLM_CLIPSPACE_INCLUDE_ALL")
     ]
+
+#if arch(x86_64)
+cglmBuildSettings += [.define("__AVX__")]
+#elseif arch(arm64) && os(Windows)
+cglmBuildSettings += [.define("_M_ARM64")]
+#elseif arch(arm64) && os(Linux) || os(macOS) || os(iOS)
+cglmBuildSettings += [.define("__ARM_NEON")]
+#endif
 
 let package = Package(
     name: "cglm",
